@@ -10,3 +10,12 @@ formatted address, as well as latitude and longitude of the address.
 1. Spring Boot Integration Micro-services
 2. Apache Camel for building the actual integration
 3. Maven for compiling and building the application
+
+
+## Decisions
+
+1. Using @AutoConfigureWebClient on my tests in order to
+Spring inject restTemplateBuilder, because the default 
+behaviour for the @webmvctest is to load only things
+related to mvc stuff, and RestTemplateBuilder is not one
+of it.
